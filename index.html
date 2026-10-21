@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!-- Sets the document language to English and the default theme to light.
+     The data-theme attribute is what style.css reads to switch palettes. -->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <!-- viewport meta tag is essential so the page scales correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- A short description used by search engines and link previews -->
+  <meta name="description" content="Portfolio of Vaishnavi Sree Ravva — B.Tech CSE (AI & ML) student and aspiring web developer from Hyderabad, India." />
+  <title>Vaishnavi Sree Ravva — Portfolio</title>
+
+  <!-- Google Fonts: Playfair Display (elegant serif) for headings,
+       Inter (clean sans-serif) for body text. preconnect speeds up loading. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Our local stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Reading progress bar =====
+       A thin gold bar at the very top that grows as the user scrolls down. -->
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav container" aria-label="Primary navigation">
+      <!-- Logo / name — clicking it returns to the hero -->
+      <a href="#home" class="nav-logo" aria-label="Vaishnavi — home">
+        <span class="logo-mark">V</span>
+        <span class="logo-text">Vaishnavi Sree Ravva</span>
+      </a>
+
+      <!-- The menu of links. On desktop this shows inline;
+           on mobile it slides in from the right when the hamburger is tapped. -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"     class="nav-link active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls: theme toggle is always visible, hamburger only on mobile -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle"
+                aria-label="Toggle dark and light theme"
+                aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== HOME / HERO =====================
+         Editorial layout: a giant faded "PORTFOLIO" word sits behind,
+         the name appears as a large serif heading on the left, and the
+         headshot photo overlaps the name from the right (like the
+         Pia Quinn reference). -->
+    <section id="home" class="section hero">
+      <!-- Slow-drifting blurred gradient blobs (sage + navy) behind the hero -->
+      <div class="aurora" aria-hidden="true">
+        <span class="aurora-blob blob-1"></span>
+        <span class="aurora-blob blob-2"></span>
+      </div>
+
+      <!-- Giant background word for editorial layering. Decorative only. -->
+      <div class="hero-word" aria-hidden="true">PORTFOLIO</div>
+
+      <div class="container hero-grid">
+        <!-- LEFT column: text -->
+        <div class="hero-text">
+          <p class="hero-greeting">Hello, I'm</p>
+
+          <!-- Name shown big, on two lines, with the surname in italic sage. -->
+          <h1 class="hero-name">
+            Vaishnavi<br />
+            <span class="hero-name-soft">Sree Ravva</span>
+          </h1>
+
+          <!-- Tagline that gently fades through three short phrases.
+               JS in script.js swaps the text every few seconds. -->
+          <p class="hero-tagline">
+            <span id="tagline">Curious mind.</span>
+          </p>
+
+          <p class="hero-intro">
+            B.Tech CSE (AI &amp; ML) student in Hyderabad, building responsive,
+            AI-powered web applications — one careful line of code at a time.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact"  class="btn btn-ghost">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- RIGHT column: headshot photo of Vaishnavi.
+             On desktop it overlaps the name slightly (see margin-left in CSS).
+             alt text describes the photo for screen-reader users. -->
+        <div class="hero-photo">
+          <img src="vaishnavi-headshot.png"
+               alt="Portrait of Vaishnavi Sree Ravva — B.Tech CSE (AI & ML) student and aspiring web developer"
+               width="420" height="525" />
+          <p class="hero-photo-caption">Vaishnavi Sree Ravva<br /><span>Hyderabad, India</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-label">— About Me</p>
+        <h2 class="section-title">A quiet, deliberate learner.</h2>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a motivated B.Tech CSE (AI &amp; ML) student based in Hyderabad,
+              with hands-on industry experience through the Infosys Springboard 7.0
+              Internship and eight Infosys Springboard certifications covering
+              AI, generative AI and deep learning. I care about building things
+              that are genuinely useful — responsive interfaces, careful back-ends,
+              and small details that make software feel calm to use.
+            </p>
+            <p>
+              Lately I've been working across the full stack with React, TypeScript,
+              Node.js, Express, Prisma and PostgreSQL, and exploring how AI features
+              can be woven into web apps in a way that respects the user. I'm looking
+              for a Web Development Intern role where I can keep learning from people
+              better than myself, ship real features, and grow into full-stack and
+              AI-integrated engineering work.
+            </p>
+          </div>
+
+          <aside class="about-facts card">
+            <h3 class="facts-title">Quick facts</h3>
+            <ul>
+              <li><strong>Location</strong> Hyderabad, Telangana, India</li>
+              <li><strong>Education</strong> B.Tech in CSE (AI &amp; ML)</li>
+              <li><strong>College</strong> Sri Indu College of Engineering &amp; Technology</li>
+              <li><strong>Timeline</strong> Jul 2024 – Jun 2028</li>
+              <li><strong>CGPA</strong> 8.7</li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- "At a glance" strip: three quiet stats -->
+        <ul class="glance-strip" role="list">
+          <li><span class="glance-num">8</span><span class="glance-label">certifications</span></li>
+          <li><span class="glance-num">8.7</span><span class="glance-label">CGPA</span></li>
+          <li><span class="glance-num">3</span><span class="glance-label">projects built</span></li>
+        </ul>
+
+        <!-- Extracurriculars -->
+        <div class="extracurriculars card">
+          <h3 class="facts-title">Beyond the classroom</h3>
+          <ul>
+            <li>
+              <strong>AI Club Member</strong> — Sri Indu College of Engineering
+              &amp; Technology, AI &amp; ML Dept. (Jul 2025 – Present)
+            </li>
+            <li>
+              <strong>NSS Member</strong> — National Service Scheme (Aug 2025 – Present)
+            </li>
+            <li>
+              <strong>Volunteer &amp; Student Coordinator</strong> — KIYE Science
+              Exhibition &amp; Space Events (Feb 2026); coordinated a 3,000+ participant event
+            </li>
+          </ul>
+        </div>
+
+        <!-- Short original quote about learning and consistency.
+             No famous quotes — the brief asks for an original one. -->
+        <blockquote class="quote">
+          "Learning compounds quietly — one small, careful build today
+          becomes the foundation of something remarkable tomorrow."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="section-label">— Skills</p>
+        <h2 class="section-title">Tools I think and build with.</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card card">
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>Python</li><li>C</li><li>SQL</li>
+              <li>JavaScript (ES6+)</li><li>TypeScript</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card">
+            <h3>Frontend</h3>
+            <ul class="chips">
+              <li>React</li><li>HTML5</li><li>CSS3</li>
+              <li>Tailwind CSS</li><li>Responsive Web Design</li><li>Leaflet</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card">
+            <h3>Backend &amp; Databases</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>Express</li><li>FastAPI</li>
+              <li>REST APIs</li><li>PostgreSQL</li><li>Prisma</li>
+              <li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card">
+            <h3>AI / ML</h3>
+            <ul class="chips">
+              <li>Machine Learning</li><li>Deep Learning</li>
+              <li>Generative AI</li><li>Prompt Engineering</li>
+              <li>Agentic AI</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card">
+            <h3>Tools &amp; Practices</h3>
+            <ul class="chips">
+              <li>Git / GitHub</li><li>VS Code</li>
+              <li>JWT Authentication</li><li>Geolocation API</li>
+              <li>Agile / Scrum</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="section-label">— Projects</p>
+        <h2 class="section-title">Things I've built.</h2>
+
+        <div class="projects-grid">
+          <!-- Project 1: ExamAce -->
+          <article class="project-card card">
+            <h3 class="project-title">ExamAce</h3>
+            <p class="project-subtitle">Full-Stack Exam Platform</p>
+            <p class="project-desc">
+              A scalable full-stack exam platform with secure user authentication,
+              JWT-based session management, a complete password-reset flow, and
+              protected dashboard routes so only authenticated users can reach them.
+            </p>
+            <ul class="project-tags">
+              <li>React</li><li>TypeScript</li><li>Node.js</li>
+              <li>Express</li><li>Prisma</li><li>PostgreSQL</li>
+            </ul>
+            <div class="project-links">
+              <!-- TODO: replace href="#" with your real GitHub repo URL -->
+              <a href="https://github.com/vaish210826/ExamAce.git" class="project-link" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Project 2: Looplabs -->
+          <article class="project-card card">
+            <h3 class="project-title">Looplabs</h3>
+            <p class="project-subtitle">Personal Safety Web App</p>
+            <p class="project-desc">
+              A mobile-first safety app with emergency SOS and live location sharing,
+              nearby police stations and hospitals on an interactive map, a fake-call
+              feature, a safety check-in timer, emergency contact shortcuts, and an
+              incident reporting form.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              <li>Tailwind CSS</li><li>Leaflet</li><li>OpenStreetMap</li>
+            </ul>
+            <div class="project-links">
+              <!-- TODO: replace href="#" with your real GitHub repo URL -->
+              <a href="https://github.com/vedavyasreddysomu/Codemania_2025_Looplabs.git" class="project-link" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Project 3: ClipMind AI -->
+          <article class="project-card card">
+            <h3 class="project-title">ClipMind AI</h3>
+            <p class="project-subtitle">AI Video Summarizer · Infosys Springboard 7.0 Internship</p>
+            <p class="project-desc">
+              Designed the PostgreSQL schema and SQLAlchemy models for an AI video
+              summarizer, built the Alembic migration pipeline, unified multi-branch
+              migration history, and implemented foreign-key cascade deletes to keep
+              data integrity tight.
+            </p>
+            <ul class="project-tags">
+              <li>Python</li><li>FastAPI</li><li>PostgreSQL</li>
+              <li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li>
+            </ul>
+            <div class="project-links">
+              <!-- TODO: replace href="#" with your real GitHub repo URL -->
+              <a href="https://github.com/springboardmentor4132x/AI-Video-summarizer-team-1-.git" class="project-link" rel="noopener">GitHub</a>
+              
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="section-label">— Contact</p>
+        <h2 class="section-title">Let's talk.</h2>
+
+        <div class="contact-grid">
+          <!-- Left: direct contact details -->
+          <div class="contact-info">
+            <p>
+              Whether it's an internship, a collaboration, or just a question about
+              something I built — my inbox is open. I usually reply within a day or two.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a href="mailto:vaishnaviravva33@gmail.com">vaishnaviravva33@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/vaishnavi-ravva-ai" target="_blank" rel="noopener">linkedin.com/in/vaishnavi-ravva-ai</a>
+              </li>
+              <li>
+                <span class="contact-label">Location</span>
+                Hyderabad, Telangana, India
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: contact form with JS validation (no backend) -->
+          <form class="contact-form card" id="contactForm" novalidate>
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+              <span class="error" id="errorName" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <span class="error" id="errorEmail" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="error" id="errorMessage" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send message</button>
+
+            <!-- Success message, hidden by default until JS reveals it -->
+            <p class="form-success" id="formSuccess" role="status" hidden>
+              Thanks, your message was sent!
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        © <span id="year">2026</span> Vaishnavi Sree Ravva. Built with plain HTML, CSS &amp; JavaScript.
+      </p>
+      <a href="#home" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Load the script at the very end so the DOM is parsed first -->
+  <script src="script.js"></script>
+</body>
+</html>
