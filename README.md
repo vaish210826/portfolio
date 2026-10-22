@@ -35,11 +35,6 @@ A responsive personal portfolio website built using **HTML, CSS, and JavaScript*
 
 
 
-
-
-> Note: Create a `screenshots` folder in your repository and add your actual screenshot files. Update the image paths if your filenames or folder structure are different.
-
-
 ### Prerequisites
 
 - A modern web browser, such as Google Chrome or Microsoft Edge.
