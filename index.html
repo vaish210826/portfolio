@@ -2,30 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Viewport tag makes the page scale correctly on phones -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Viewport tag makes the page scale correctly on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaishnavi Sree Ravva | Web Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Vaishnavi Sree Ravva, B.Tech CSE (AI & ML) student and aspiring web developer building AI-powered web apps." />
+  <meta name="description" content="Portfolio of Vaishnavi Sree Ravva, B.Tech CSE (AI & ML) student and aspiring web developer building modern, responsive, and AI-powered web applications." />
+  
+  <!-- Favicon icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+
   <!-- Google Fonts: Space Grotesk (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== NAVBAR (sticky) ========== -->
-  <header class="site-header">
+  <!-- ========== NAVBAR (sticky glassmorphism) ========== -->
+  <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Main navigation">
-      <a href="#home" class="logo">Vaishnavi<span>.</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <a href="#home" class="logo" aria-label="Vaishnavi's portfolio homepage">
+        <span class="logo-text">Vaishnavi</span><span class="logo-dot">.</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button class="theme-toggle" id="themeToggle" aria-label="Switch dark/light mode">🌓</button></li>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Switch dark/light mode" title="Toggle dark / light mode">
+            <span class="theme-icon" aria-hidden="true">🌓</span>
+            <span class="theme-text">Theme</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -33,15 +54,51 @@
   <main>
     <!-- ========== HOME (hero) ========== -->
     <section id="home" class="hero">
-      <div class="container">
-        <p class="hero-hello">Hi, I'm</p>
-        <h1>Vaishnavi Sree Ravva</h1>
-        <!-- Typing animation fills this element (see script.js) -->
-        <p class="hero-tagline" aria-live="polite"><span id="typing"></span><span class="cursor">|</span></p>
-        <p class="hero-intro">I build responsive, user-focused web apps, and I'm looking for a Web Development Intern role.</p>
-        <div class="btn-row">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-status reveal">
+            <span class="status-indicator"></span>
+            <span>Open for Web Development Internships</span>
+          </div>
+
+          <p class="hero-hello reveal">Hi, I'm</p>
+          <h1 class="hero-title reveal">Vaishnavi Sree Ravva</h1>
+          
+          <!-- Typing animation -->
+          <p class="hero-tagline reveal" aria-live="polite">
+            <span id="typing"></span><span class="cursor" aria-hidden="true">|</span>
+          </p>
+
+          <p class="hero-intro reveal">
+            B.Tech CSE (AI &amp; ML) student passionate about building performant, accessible, and user-centric web applications. Hands-on with React, TypeScript, Node.js, FastAPI, and generative AI.
+          </p>
+
+          <div class="btn-row reveal">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Get in Touch</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-socials reveal" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/vaishnavi-ravva-ai" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:vaishnaviravva33@gmail.com" class="social-link" title="Send Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Email</span>
+            </a>
+            <a href="#projects" class="social-link" title="Jump to projects">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              <span>6 Projects</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -49,17 +106,44 @@
     <!-- ========== ABOUT ========== -->
     <section id="about" class="section">
       <div class="container">
-        <h2 class="reveal">About Me</h2>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Background &amp; Profile</span>
+          <h2>About Me</h2>
+        </div>
         <div class="about-grid">
-          <div class="reveal">
-            <p>Motivated student with industry experience through the Infosys Springboard 7.0 Internship and eight Infosys Springboard certifications in AI, generative AI, and deep learning. Hands-on with full-stack development and passionate about building responsive, user-focused, AI-powered web applications. Seeking a Web Development Intern role.</p>
-            <p class="extra"><strong>Beyond coding:</strong> AI Club member, NSS member, and volunteer coordinator for a science exhibition with 3,000+ participants.</p>
+          <div class="about-story card reveal">
+            <h3>Building at the Intersection of Web &amp; AI</h3>
+            <p>
+              I am a motivated computer science student with industry experience gained through the <strong>Infosys Springboard 7.0 Internship</strong> and 8 Infosys Springboard certifications spanning AI, generative AI, and deep learning.
+            </p>
+            <p>
+              My hands-on experience includes full-stack web development with modern React and TypeScript ecosystems, backend microservices with FastAPI and Node.js, and database schema migrations with PostgreSQL and Supabase.
+            </p>
+            <p class="extra">
+              <strong>Beyond coding:</strong> Active AI Club member, NSS volunteer, and lead coordinator for a technical science exhibition hosting 3,000+ participants.
+            </p>
           </div>
-          <ul class="facts card reveal">
-            <li><strong>Location</strong> Hyderabad, Telangana, India</li>
-            <li><strong>Education</strong> B.Tech CSE (AI &amp; ML), Sri Indu College of Engineering &amp; Technology, Jul 2024 – Jun 2028</li>
-            <li><strong>CGPA</strong> 8.7</li>
-          </ul>
+
+          <div class="about-stats-wrapper">
+            <ul class="facts card reveal" aria-label="Key Facts">
+              <li>
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Hyderabad, Telangana, India</span>
+              </li>
+              <li>
+                <span class="fact-label">Education</span>
+                <span class="fact-value">B.Tech CSE (AI &amp; ML), Sri Indu College of Engg. &amp; Tech (2024 – 2028)</span>
+              </li>
+              <li>
+                <span class="fact-label">Academic Standing</span>
+                <span class="fact-value highlight">CGPA: 8.7 / 10</span>
+              </li>
+              <li>
+                <span class="fact-label">Focus Areas</span>
+                <span class="fact-value">Full-Stack Development, Modern UI, AI Integration</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -67,96 +151,371 @@
     <!-- ========== SKILLS ========== -->
     <section id="skills" class="section alt">
       <div class="container">
-        <h2 class="reveal">Skills</h2>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Technical Expertise</span>
+          <h2>Skills &amp; Capabilities</h2>
+        </div>
         <div class="grid skills-grid">
-          <article class="card reveal"><h3>Languages</h3>
-            <ul class="tags"><li>Python</li><li>C</li><li>SQL</li><li>JavaScript (ES6+)</li><li>TypeScript</li></ul></article>
-          <article class="card reveal"><h3>Frontend</h3>
-            <ul class="tags"><li>React</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li><li>Responsive Web Design</li><li>Leaflet</li></ul></article>
-          <article class="card reveal"><h3>Backend &amp; Databases</h3>
-            <ul class="tags"><li>Node.js</li><li>Express</li><li>FastAPI</li><li>REST APIs</li><li>PostgreSQL</li><li>Prisma</li><li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li></ul></article>
-          <article class="card reveal"><h3>AI / ML</h3>
-            <ul class="tags"><li>Machine Learning</li><li>Deep Learning</li><li>Generative AI</li><li>Prompt Engineering</li><li>Agentic AI</li></ul></article>
-          <article class="card reveal"><h3>Tools</h3>
-            <ul class="tags"><li>Git/GitHub</li><li>VS Code</li><li>JWT Authentication</li><li>Geolocation API</li><li>Agile/Scrum</li></ul></article>
+          <article class="card skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-icon" aria-hidden="true">💻</span>
+              <h3>Languages</h3>
+            </div>
+            <ul class="tags">
+              <li>Python</li>
+              <li>JavaScript (ES6+)</li>
+              <li>TypeScript</li>
+              <li>SQL</li>
+              <li>C</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-icon" aria-hidden="true">🎨</span>
+              <h3>Frontend</h3>
+            </div>
+            <ul class="tags">
+              <li>React</li>
+              <li>HTML5 &amp; Semantic Web</li>
+              <li>CSS3 &amp; Animations</li>
+              <li>Tailwind CSS</li>
+              <li>Leaflet / Maps</li>
+              <li>Responsive Design</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-icon" aria-hidden="true">⚙️</span>
+              <h3>Backend &amp; DB</h3>
+            </div>
+            <ul class="tags">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>FastAPI</li>
+              <li>RESTful APIs</li>
+              <li>PostgreSQL</li>
+              <li>Prisma ORM</li>
+              <li>SQLAlchemy &amp; Alembic</li>
+              <li>Supabase</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-icon" aria-hidden="true">🧠</span>
+              <h3>AI / ML</h3>
+            </div>
+            <ul class="tags">
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Generative AI</li>
+              <li>Prompt Engineering</li>
+              <li>Agentic AI Workflows</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card reveal">
+            <div class="skill-card-header">
+              <span class="skill-icon" aria-hidden="true">🛠️</span>
+              <h3>Tools &amp; Practices</h3>
+            </div>
+            <ul class="tags">
+              <li>Git / GitHub</li>
+              <li>VS Code</li>
+              <li>JWT Authentication</li>
+              <li>Geolocation APIs</li>
+              <li>Agile / Scrum</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ========== PROJECTS ========== -->
+    <!-- ========== PROJECTS (With Search, Category Filter & Modal Details) ========== -->
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="reveal">Projects</h2>
-        <div class="grid projects-grid">
-
-          <article class="card project reveal">
-            <h3>ExamAce – Full-Stack Exam Platform</h3>
-            <p>Scalable exam platform with secure authentication, JWT session management, a complete password reset flow, and protected dashboard routes.</p>
-            <ul class="tags"><li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li></ul>
-            <div class="btn-row">
-              <!-- TODO: replace "#" with your real GitHub and live demo links -->
-              <a href="#" class="btn btn-outline">GitHub</a>
-              <a href="#" class="btn btn-primary">Live Demo</a>
-            </div>
-          </article>
-
-          <article class="card project reveal">
-            <h3>Looplabs – Personal Safety Web App</h3>
-            <p>Mobile-first safety app with emergency SOS, live location sharing, nearby police stations and hospitals on a map, fake-call feature, safety check-in timer, emergency contact shortcuts, and an incident reporting form.</p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Tailwind CSS</li><li>Leaflet</li><li>OpenStreetMap</li></ul>
-            <div class="btn-row">
-              <!-- TODO: replace "#" with your real GitHub and live demo links -->
-              <a href="#" class="btn btn-outline">GitHub</a>
-              <a href="#" class="btn btn-primary">Live Demo</a>
-            </div>
-          </article>
-
-          <article class="card project reveal">
-            <h3>ClipMind AI – AI Video Summarizer</h3>
-            <p class="meta">Infosys Springboard 7.0 Internship</p>
-            <p>Designed the database schema and models, built the Alembic migration pipeline, unified multi-branch migration history, and implemented foreign-key cascade deletes.</p>
-            <ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li></ul>
-            <div class="btn-row">
-              <!-- TODO: replace "#" with your real GitHub and live demo links -->
-              <a href="#" class="btn btn-outline">GitHub</a>
-              <a href="#" class="btn btn-primary">Live Demo</a>
-            </div>
-          </article>
-
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Featured Work</span>
+          <h2>Projects</h2>
+          <p class="section-subtitle">
+            Explore web applications, APIs, and AI projects. Filter by category or search by tech stack and keywords.
+          </p>
         </div>
+
+        <!-- Search and Filter Controls -->
+        <div class="projects-controls card reveal">
+          <!-- Search Bar -->
+          <div class="search-box-wrapper">
+            <label for="projectSearchInput" class="visually-hidden">Search projects</label>
+            <div class="search-input-group">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input 
+                type="search" 
+                id="projectSearchInput" 
+                placeholder="Search projects by title, tech stack (e.g., React, Python), or keywords..." 
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search input" title="Clear search" hidden>✕</button>
+            </div>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div class="filter-bar" role="tablist" aria-label="Project categories">
+            <button type="button" class="filter-btn active" data-category="all" role="tab" aria-selected="true">
+              All Projects <span class="filter-count" id="countAll">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-category="frontend" role="tab" aria-selected="false">
+              Frontend <span class="filter-count" id="countFrontend">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-category="backend" role="tab" aria-selected="false">
+              Backend <span class="filter-count" id="countBackend">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-category="other" role="tab" aria-selected="false">
+              Other Projects <span class="filter-count" id="countOther">0</span>
+            </button>
+          </div>
+
+          <!-- Live Status Bar -->
+          <div class="filter-status-row">
+            <p class="filter-status-text" id="filterStatusText" aria-live="polite">Showing all projects</p>
+            <button type="button" id="resetFiltersBtn" class="btn-text-action" hidden>Reset all filters</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid Container (dynamically populated & filtered by script.js) -->
+        <div class="grid projects-grid" id="projectsGrid" aria-live="polite">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Empty State (shown when search/filter has 0 matches) -->
+        <div id="noProjectsMessage" class="empty-state card" hidden>
+          <div class="empty-state-icon" aria-hidden="true">🔍</div>
+          <h3>No matching projects found</h3>
+          <p id="emptyStateDetail">Try adjusting your search query or selecting another category filter.</p>
+          <button type="button" class="btn btn-primary" id="emptyStateResetBtn">Reset Search &amp; Filters</button>
+        </div>
+
       </div>
     </section>
+
+    <!-- ========== PROJECT DETAIL MODAL / POPUP ========== -->
+    <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-card" id="modalCard">
+        <!-- Close button -->
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close project details modal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-badges">
+            <span class="category-pill" id="modalCategory">Category</span>
+            <span class="highlight-pill" id="modalHighlight" hidden>Featured</span>
+          </div>
+          <h3 id="modalTitle" class="modal-title">Project Title</h3>
+          <p id="modalTagline" class="modal-tagline">Brief one-line summary</p>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="modal-section">
+            <h4>Overview &amp; Architecture</h4>
+            <p id="modalDescription" class="modal-desc-text">Detailed explanation of the project.</p>
+          </div>
+
+          <div class="modal-section">
+            <h4>Key Features &amp; Highlights</h4>
+            <ul class="modal-features-list" id="modalFeatures">
+              <!-- Feature items injected dynamically -->
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h4>Technologies &amp; Libraries</h4>
+            <ul class="tags modal-tags-list" id="modalTags">
+              <!-- Tech tags injected dynamically -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Modal Footer Actions -->
+        <div class="modal-footer">
+          <div class="btn-row">
+            <a href="#" id="modalLiveDemo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <span>Live Demo</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="#" id="modalGithub" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <span>View Source Code</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <button type="button" class="btn btn-ghost" id="modalDismissBtn">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ========== CONTACT ========== -->
     <section id="contact" class="section alt">
       <div class="container">
-        <h2 class="reveal">Contact</h2>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2>Contact Me</h2>
+          <p class="section-subtitle">
+            Have an internship opportunity, a project proposal, or a question? Send me a message using the form below.
+          </p>
+        </div>
+
         <div class="contact-grid">
-          <div class="reveal">
-            <p>Want to work together or have a question? Send a message or reach me directly:</p>
-            <p><a href="mailto:vaishnaviravva33@gmail.com">vaishnaviravva33@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/vaishnavi-ravva-ai" target="_blank" rel="noopener">linkedin.com/in/vaishnavi-ravva-ai</a></p>
+          <!-- Contact Info Card -->
+          <div class="contact-info-panel card reveal">
+            <h3>Let's Connect</h3>
+            <p>
+              I am actively looking for Web Development Intern roles and open to contributing to exciting projects. Feel free to reach out directly:
+            </p>
+
+            <ul class="contact-methods-list" aria-label="Direct contact channels">
+              <li>
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span class="contact-method-title">Email</span>
+                  <a href="mailto:vaishnaviravva33@gmail.com" class="contact-link">vaishnaviravva33@gmail.com</a>
+                </div>
+              </li>
+
+              <li>
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-method-title">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/vaishnavi-ravva-ai" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/vaishnavi-ravva-ai</a>
+                </div>
+              </li>
+
+              <li>
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-method-title">Location</span>
+                  <span class="contact-text">Hyderabad, Telangana, India</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-callout">
+              <strong>Quick Response:</strong> Usually replies within 24 hours.
+            </div>
           </div>
-          <!-- novalidate: we do our own validation in script.js -->
-          <form id="contactForm" class="card reveal" novalidate>
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" />
-              <span class="error" id="nameError" role="alert"></span>
+
+          <!-- Functional Contact Form with Validation -->
+          <div class="contact-form-wrapper card reveal">
+            <form id="contactForm" novalidate aria-describedby="formNotice">
+              <p id="formNotice" class="visually-hidden">All fields are required unless indicated otherwise. Form input is validated before submission.</p>
+
+              <!-- Name Field -->
+              <div class="field" id="field-name">
+                <label for="name">
+                  Full Name <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="e.g., Alex Morgan" 
+                    autocomplete="name" 
+                    aria-required="true"
+                    aria-describedby="nameError"
+                  />
+                  <span class="field-icon-status" aria-hidden="true"></span>
+                </div>
+                <span class="error" id="nameError" role="alert"></span>
+              </div>
+
+              <!-- Email Field -->
+              <div class="field" id="field-email">
+                <label for="email">
+                  Email Address <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="e.g., alex@example.com" 
+                    autocomplete="email" 
+                    aria-required="true"
+                    aria-describedby="emailError"
+                  />
+                  <span class="field-icon-status" aria-hidden="true"></span>
+                </div>
+                <span class="error" id="emailError" role="alert"></span>
+              </div>
+
+              <!-- Subject Field -->
+              <div class="field" id="field-subject">
+                <label for="subject">
+                  Inquiry Topic <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <select id="subject" name="subject" aria-required="true" aria-describedby="subjectError">
+                    <option value="" disabled selected>Select a topic...</option>
+                    <option value="Internship Opportunity">Web Development Internship</option>
+                    <option value="Project Collaboration">Project Collaboration</option>
+                    <option value="Full-Stack Work">Full-Stack Development Work</option>
+                    <option value="General Question">General Inquiry / Networking</option>
+                  </select>
+                  <span class="field-icon-status" aria-hidden="true"></span>
+                </div>
+                <span class="error" id="subjectError" role="alert"></span>
+              </div>
+
+              <!-- Message Field -->
+              <div class="field" id="field-message">
+                <div class="label-row">
+                  <label for="message">
+                    Your Message <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <span class="char-counter" id="charCounter" aria-live="polite">0 / 1000</span>
+                </div>
+                <div class="input-wrapper">
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="5" 
+                    maxlength="1000"
+                    placeholder="Write your message here... (minimum 10 characters)" 
+                    aria-required="true"
+                    aria-describedby="messageError"
+                  ></textarea>
+                  <span class="field-icon-status" aria-hidden="true"></span>
+                </div>
+                <span class="error" id="messageError" role="alert"></span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-spinner" aria-hidden="true" hidden></span>
+                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+
+            <!-- Success Confirmation Card (Shown dynamically upon valid submission) -->
+            <div id="formSuccessCard" class="form-success-card" hidden role="status">
+              <div class="success-icon" aria-hidden="true">✓</div>
+              <h3>Message Sent Successfully!</h3>
+              <p id="successMessageText">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+              <button type="button" id="sendAnotherBtn" class="btn btn-outline">Send Another Message</button>
             </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" />
-              <span class="error" id="emailError" role="alert"></span>
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5"></textarea>
-              <span class="error" id="messageError" role="alert"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Send message</button>
-            <p class="success" id="formSuccess" role="status"></p>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -165,11 +524,25 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Vaishnavi Sree Ravva. All rights reserved.</p>
-      <a href="#home">Back to top ↑</a>
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> Vaishnavi Sree Ravva. All rights reserved.</p>
+        <p class="footer-sub">Designed &amp; Developed with modern semantic HTML5, CSS3, and JavaScript.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#home" class="back-to-top-link">
+          <span>Back to top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
     </div>
   </footer>
 
+  <!-- Floating Back to Top Button -->
+  <button type="button" id="floatingTopBtn" class="floating-top-btn" aria-label="Scroll back to top" title="Scroll back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <!-- Application Logic -->
   <script src="script.js"></script>
 </body>
 </html>
