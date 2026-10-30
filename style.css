@@ -1,0 +1,122 @@
+/* ========== 1. VARIABLES (colors, spacing, fonts) ========== */
+:root {
+  --bg: #f6f7fc;
+  --bg-alt: #eaecf8;
+  --card: #ffffff;
+  --text: #1a1d3a;
+  --muted: #565b80;
+  --primary: #2e3192;      /* indigo */
+  --accent: #e8590c;       /* bright orange accent, contrast-checked on white */
+  --border: #d5d8ee;
+  --shadow: 0 4px 18px rgba(26, 29, 58, 0.1);
+  --font-head: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 3rem; --space-5: 5rem;
+  --radius: 12px;
+  --nav-h: 64px;
+}
+/* Dark theme: the toggle sets data-theme="dark" on <html> */
+[data-theme="dark"] {
+  --bg: #0d1030; --bg-alt: #141842; --card: #1b2054;
+  --text: #eef0ff; --muted: #b3b8e0; --primary: #8f95ff; --accent: #ff9248;
+  --border: #2d3377; --shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ========== 2. BASE ========== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; transition: background 0.3s, color 0.3s; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0 0 var(--space-2); }
+h2 { font-size: 2rem; }
+a { color: var(--primary); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; } /* visible focus */
+/* Same max-width container for every section */
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 var(--space-3); }
+/* scroll-margin-top keeps headings clear of the sticky navbar */
+section { scroll-margin-top: var(--nav-h); }
+.section { padding: var(--space-5) 0; }
+.alt { background: var(--bg-alt); }
+
+/* ========== 3. NAVBAR ========== */
+.site-header { position: sticky; top: 0; z-index: 100; height: var(--nav-h); background: var(--bg); border-bottom: 1px solid var(--border); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.logo { font-family: var(--font-head); font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); }
+.logo span { color: var(--accent); }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: var(--space-3); }
+.nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); border-bottom-color: var(--accent); } /* active link highlight */
+.nav-toggle, .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text); border-radius: 8px; font-size: 1.1rem; padding: 0.3rem 0.6rem; cursor: pointer; }
+.nav-toggle { display: none; }
+
+/* Mobile first: below 768px the links become a dropdown panel */
+@media (max-width: 767px) {
+  .nav-toggle { display: block; }
+  .nav-links { position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding: var(--space-3); background: var(--bg); border-bottom: 1px solid var(--border); display: none; }
+  .nav-links.open { display: flex; }
+}
+
+/* ========== 4. BUTTONS (shared style) ========== */
+.btn { display: inline-block; padding: 0.7rem 1.4rem; border-radius: 8px; font-weight: 600; font-family: var(--font-body); font-size: 1rem; text-decoration: none; cursor: pointer; border: 2px solid var(--primary); transition: transform 0.2s, background 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--primary); color: #fff; }
+[data-theme="dark"] .btn-primary { color: #0d1030; }
+.btn-outline { background: transparent; color: var(--primary); }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+
+/* ========== 5. HERO ========== */
+.hero { padding: var(--space-5) 0; min-height: 80vh; display: flex; align-items: center; }
+.hero-hello { color: var(--accent); font-weight: 600; font-size: 1.2rem; margin: 0; }
+.hero h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); }
+.hero-tagline { font-family: var(--font-head); font-size: clamp(1.05rem, 3vw, 1.5rem); color: var(--primary); min-height: 2.4em; }
+.cursor { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-intro { max-width: 55ch; color: var(--muted); }
+
+/* ========== 6. CARDS, GRIDS, TAGS ========== */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-3); box-shadow: var(--shadow); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.grid { display: grid; gap: var(--space-3); grid-template-columns: 1fr; }
+.about-grid, .contact-grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+.facts { list-style: none; margin: 0; }
+.facts li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+.facts li:last-child { border: none; }
+.facts strong { display: block; color: var(--primary); }
+.tags { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tags li { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.85rem; }
+.meta { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin: 0 0 0.5rem; }
+
+/* ========== 7. FORM ========== */
+.field { margin-bottom: var(--space-2); }
+label { display: block; font-weight: 500; margin-bottom: 0.3rem; }
+input, textarea { width: 100%; padding: 0.7rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; }
+input.invalid, textarea.invalid { border-color: #d62828; }
+.error { display: block; color: #d62828; font-size: 0.85rem; min-height: 1.2em; }
+[data-theme="dark"] .error { color: #ff8080; }
+.success { color: #2b8a3e; font-weight: 600; margin: var(--space-2) 0 0; }
+[data-theme="dark"] .success { color: #69db7c; }
+
+/* ========== 8. FOOTER ========== */
+.footer { padding: var(--space-3) 0; border-top: 1px solid var(--border); color: var(--muted); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1); }
+.footer p { margin: 0; }
+
+/* ========== 9. SCROLL REVEAL (JS adds .visible) ========== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .cursor { animation: none; }
+}
+
+/* ========== 10. BREAKPOINTS ========== */
+/* Tablet */
+@media (min-width: 768px) {
+  .skills-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid, .contact-grid { grid-template-columns: 1.4fr 1fr; }
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}

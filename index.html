@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Viewport tag makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vaishnavi Sree Ravva | Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Vaishnavi Sree Ravva, B.Tech CSE (AI & ML) student and aspiring web developer building AI-powered web apps." />
+  <!-- Google Fonts: Space Grotesk (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR (sticky) ========== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo">Vaishnavi<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" id="themeToggle" aria-label="Switch dark/light mode">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HOME (hero) ========== -->
+    <section id="home" class="hero">
+      <div class="container">
+        <p class="hero-hello">Hi, I'm</p>
+        <h1>Vaishnavi Sree Ravva</h1>
+        <!-- Typing animation fills this element (see script.js) -->
+        <p class="hero-tagline" aria-live="polite"><span id="typing"></span><span class="cursor">|</span></p>
+        <p class="hero-intro">I build responsive, user-focused web apps, and I'm looking for a Web Development Intern role.</p>
+        <div class="btn-row">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="reveal">About Me</h2>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>Motivated student with industry experience through the Infosys Springboard 7.0 Internship and eight Infosys Springboard certifications in AI, generative AI, and deep learning. Hands-on with full-stack development and passionate about building responsive, user-focused, AI-powered web applications. Seeking a Web Development Intern role.</p>
+            <p class="extra"><strong>Beyond coding:</strong> AI Club member, NSS member, and volunteer coordinator for a science exhibition with 3,000+ participants.</p>
+          </div>
+          <ul class="facts card reveal">
+            <li><strong>Location</strong> Hyderabad, Telangana, India</li>
+            <li><strong>Education</strong> B.Tech CSE (AI &amp; ML), Sri Indu College of Engineering &amp; Technology, Jul 2024 – Jun 2028</li>
+            <li><strong>CGPA</strong> 8.7</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Skills</h2>
+        <div class="grid skills-grid">
+          <article class="card reveal"><h3>Languages</h3>
+            <ul class="tags"><li>Python</li><li>C</li><li>SQL</li><li>JavaScript (ES6+)</li><li>TypeScript</li></ul></article>
+          <article class="card reveal"><h3>Frontend</h3>
+            <ul class="tags"><li>React</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li><li>Responsive Web Design</li><li>Leaflet</li></ul></article>
+          <article class="card reveal"><h3>Backend &amp; Databases</h3>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>FastAPI</li><li>REST APIs</li><li>PostgreSQL</li><li>Prisma</li><li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li></ul></article>
+          <article class="card reveal"><h3>AI / ML</h3>
+            <ul class="tags"><li>Machine Learning</li><li>Deep Learning</li><li>Generative AI</li><li>Prompt Engineering</li><li>Agentic AI</li></ul></article>
+          <article class="card reveal"><h3>Tools</h3>
+            <ul class="tags"><li>Git/GitHub</li><li>VS Code</li><li>JWT Authentication</li><li>Geolocation API</li><li>Agile/Scrum</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="reveal">Projects</h2>
+        <div class="grid projects-grid">
+
+          <article class="card project reveal">
+            <h3>ExamAce – Full-Stack Exam Platform</h3>
+            <p>Scalable exam platform with secure authentication, JWT session management, a complete password reset flow, and protected dashboard routes.</p>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li></ul>
+            <div class="btn-row">
+              <!-- TODO: replace "#" with your real GitHub and live demo links -->
+              <a href="#" class="btn btn-outline">GitHub</a>
+              <a href="#" class="btn btn-primary">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <h3>Looplabs – Personal Safety Web App</h3>
+            <p>Mobile-first safety app with emergency SOS, live location sharing, nearby police stations and hospitals on a map, fake-call feature, safety check-in timer, emergency contact shortcuts, and an incident reporting form.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Tailwind CSS</li><li>Leaflet</li><li>OpenStreetMap</li></ul>
+            <div class="btn-row">
+              <!-- TODO: replace "#" with your real GitHub and live demo links -->
+              <a href="#" class="btn btn-outline">GitHub</a>
+              <a href="#" class="btn btn-primary">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <h3>ClipMind AI – AI Video Summarizer</h3>
+            <p class="meta">Infosys Springboard 7.0 Internship</p>
+            <p>Designed the database schema and models, built the Alembic migration pipeline, unified multi-branch migration history, and implemented foreign-key cascade deletes.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Alembic</li><li>Supabase</li></ul>
+            <div class="btn-row">
+              <!-- TODO: replace "#" with your real GitHub and live demo links -->
+              <a href="#" class="btn btn-outline">GitHub</a>
+              <a href="#" class="btn btn-primary">Live Demo</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Contact</h2>
+        <div class="contact-grid">
+          <div class="reveal">
+            <p>Want to work together or have a question? Send a message or reach me directly:</p>
+            <p><a href="mailto:vaishnaviravva33@gmail.com">vaishnaviravva33@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/vaishnavi-ravva-ai" target="_blank" rel="noopener">linkedin.com/in/vaishnavi-ravva-ai</a></p>
+          </div>
+          <!-- novalidate: we do our own validation in script.js -->
+          <form id="contactForm" class="card reveal" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" />
+              <span class="error" id="nameError" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" />
+              <span class="error" id="emailError" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+              <span class="error" id="messageError" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="success" id="formSuccess" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Vaishnavi Sree Ravva. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
